@@ -12,6 +12,10 @@ export class User extends BaseEntity {
     @Column()
     password: string;
 
+    // array of strings
+    @Column('simple-array', { nullable: true })
+    movies: string[];
+
     @Column()
     @CreateDateColumn()
     createdAt: Date;

@@ -11,13 +11,13 @@ export class AuthService {
 
     async login(authLoginDto: UserLoginDto) {
         const user = await this.validateUser(authLoginDto);
-
         const payload = {
             userId: user.id,
         };
 
         return {
             access_token: this.jwtService.sign(payload),
+            userdata: user
         };
     }
 
